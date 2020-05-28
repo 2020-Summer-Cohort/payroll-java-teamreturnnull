@@ -1,18 +1,11 @@
 public class PayrollEmployee {
-    /*int employeeId
-        String firstName
-        String lastName
-        double paycheckTotal
-        Methods:
-        Access methods
-        setPaycheckTotal*/
 
     private String firstName;
     private String lastName;
     private int employeeID;
     protected double payCheckTotal;
 
-    public PayrollEmployee(String firstName, String lastName, int employeeIDl) {
+    public PayrollEmployee(String firstName, String lastName, int employeeID) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeID = employeeID;

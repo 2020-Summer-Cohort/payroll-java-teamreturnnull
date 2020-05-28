@@ -1,11 +1,5 @@
 public class PayrollDeveloper extends PayrollEmployee implements Bonus, Insurance {
-    /* PayrollDeveloper
-  Contains all PayrollEmployee fields and methods
-  Receives Bonus (receiveBonus method)
-  Has insurance with fee of 80.00 (payInsurance method)
-  Additional fields:
-  double payPeriodEarnings of 9,000
-*/
+
     private double payPeriodEarnings;
     private double insurance;
 
@@ -16,7 +10,6 @@ public class PayrollDeveloper extends PayrollEmployee implements Bonus, Insuranc
     }
 
     public double getPayPeriodEarnings() {
-
         return payPeriodEarnings;
     }
 
