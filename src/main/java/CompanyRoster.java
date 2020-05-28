@@ -10,7 +10,6 @@ public class CompanyRoster {
 
     public void addEmployee(PayrollEmployee employee) {
         rosterMap.put(employee.getEmployeeID(), employee);
-
     }
 
     public void removeEmployee(int employeeID) {
@@ -21,9 +20,14 @@ public class CompanyRoster {
         return rosterMap.values();
     }
 
-    public void calculatePay(double bonus) {
+    public void calculatePay(double bonus, boolean optionPayInsurance) {
         double payCheckTotal = 0;
         for (PayrollEmployee employee : rosterMap.values()) {
+            if (employee instanceof Insurance) {
+                if (optionPayInsurance == false) {
+                    checkPaysInsurance();
+                }
+            }
             if (employee instanceof PayrollHourly) {
                 payCheckTotal = ((PayrollHourly) employee).getHourlyRate()
                         * ((PayrollHourly) employee).getHoursWorked();
@@ -43,4 +47,18 @@ public class CompanyRoster {
             employee.setPayCheckTotal(payCheckTotal);
         }
     }
+
+    private void checkPaysInsurance() {
+        for (PayrollEmployee employee : employeeRoster()) {
+            if (employee instanceof PayrollDeveloper) {
+                if (((PayrollDeveloper) employee).getPayInsurance()==false)
+                ((PayrollDeveloper) employee).setInsurance(0.00);
+            }
+            if (employee instanceof PayrollExecutive) {
+                if (((PayrollExecutive) employee).getPayInsurance()==false)
+                ((PayrollExecutive) employee).setInsurance(0.00);
+            }
+        }
+    }
 }
+

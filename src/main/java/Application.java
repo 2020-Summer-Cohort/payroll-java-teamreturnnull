@@ -8,7 +8,7 @@ public class Application {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to your payroll application. XYZZZZZZZZ");
+        System.out.println("Welcome to your payroll application.");
         generateEmployees();
         showEmployees();
         setEmployeeHours();
@@ -16,6 +16,17 @@ public class Application {
         calculatePayChecks();
         printDaMoney();
     }
+    public static void optionToTakeOutInsurance(){
+        for ( PayrollExecutive employee ; listOfEmployees){
+            System.out.println("Do you want to deduct insurances from pay period?");
+            String yesNo = userInput.nextLine();
+            if (yesNo.equalsIgnoreCase("No")){
+
+            }
+        }
+    }
+
+    public static void optionToTakeOutBonus(){}
 
     public static void printDaMoney() {
         for (PayrollEmployee employee : listOfEmployees) {
@@ -53,7 +64,7 @@ public class Application {
         double bonus = userInput.nextDouble();
         userInput.nextLine();
         for (PayrollEmployee employee : listOfEmployees) {
-            roster.calculatePay(bonus);
+            roster.calculatePay(bonus, false);
         }
     }
 
