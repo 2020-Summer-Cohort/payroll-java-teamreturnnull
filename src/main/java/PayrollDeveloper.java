@@ -7,13 +7,20 @@ public class PayrollDeveloper extends PayrollEmployee implements Bonus, Insuranc
   double payPeriodEarnings of 9,000
 */
     private double payPeriodEarnings;
+    private double insurance;
 
-    public PayrollDeveloper(String firstName, String lastName, int employeeID, double payCheckTotal, double payPeriodEarnings) {
-        super(firstName, lastName, employeeID, payCheckTotal);
-        this.payPeriodEarnings=9000.00;
+    public PayrollDeveloper(String firstName, String lastName, int employeeID) {
+        super(firstName, lastName, employeeID);
+        this.payPeriodEarnings = 9000.00;
+        this.insurance = -80.00;
     }
 
     public double getPayPeriodEarnings() {
+
         return payPeriodEarnings;
+    }
+
+    public double getInsurance() {
+        return insurance;
     }
 }

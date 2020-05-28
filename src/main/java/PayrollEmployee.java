@@ -12,11 +12,10 @@ public class PayrollEmployee {
     private int employeeID;
     protected double payCheckTotal;
 
-    public PayrollEmployee(String firstName, String lastName, int employeeID, double payCheckTotal) {
+    public PayrollEmployee(String firstName, String lastName, int employeeIDl) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeID = employeeID;
-        this.payCheckTotal = payCheckTotal;
     }
 
     public String getFirstName() {
@@ -35,7 +34,7 @@ public class PayrollEmployee {
         return payCheckTotal;
     }
 
-    public void setPayCheckTotal(double payCheckTotal) {
-        this.payCheckTotal = payCheckTotal;
+    public void setPayCheckTotal(double checkValue) {
+        this.payCheckTotal = checkValue;
     }
 }

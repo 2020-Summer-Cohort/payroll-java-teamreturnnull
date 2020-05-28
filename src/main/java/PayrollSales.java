@@ -7,23 +7,18 @@ public class PayrollSales extends PayrollEmployee implements Bonus {
         double sales commission (with an accompanying method to set the amount)
         double payPeriodEarnings of 3,000.00
         */
-    private double salesCommission;
     private double payPeriodEarnings;
 
 
-    public PayrollSales(String firstName, String lastName, int employeeID, double payCheckTotal, double bonus,
-                        double salesCommission, double payPeriodEarnings) {
-        super(firstName, lastName, employeeID, payCheckTotal);
-        this.salesCommission = salesCommission;
+    public PayrollSales(String firstName, String lastName, int employeeID) {
+        super(firstName, lastName, employeeID);
         this.payPeriodEarnings = 3000.00;
-    }
 
-    public double getSalesCommission() {
-        return salesCommission;
     }
 
     public double getPayPeriodEarnings() {
+
         return payPeriodEarnings;
     }
-
 }
+
