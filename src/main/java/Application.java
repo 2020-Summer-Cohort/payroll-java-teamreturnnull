@@ -13,20 +13,38 @@ public class Application {
         showEmployees();
         setEmployeeHours();
         setCommission();
+        optionToTakeOutInsurance();
         calculatePayChecks();
-        printDaMoney();
-    }
-    public static void optionToTakeOutInsurance(){
-        for ( PayrollExecutive employee ; listOfEmployees){
-            System.out.println("Do you want to deduct insurances from pay period?");
-            String yesNo = userInput.nextLine();
-            if (yesNo.equalsIgnoreCase("No")){
 
+        printDaMoney();
+
+    }
+
+    public static void optionToTakeOutInsurance() {
+        for (PayrollEmployee employee : listOfEmployees) {
+            if (employee instanceof PayrollExecutive){
+                System.out.println("Do you want to deduct insurances from "+ employee.getFirstName()+" "+
+                        employee.getLastName()+" pay period?");
+                String yesNo = userInput.nextLine();
+                if (yesNo.equalsIgnoreCase("No")) {
+                    ((PayrollExecutive)employee).setPayInsurance(false);
+                }
+            }
+        }
+        for (PayrollEmployee employee : listOfEmployees) {
+            if (employee instanceof PayrollDeveloper){
+                System.out.println("Do you want to deduct insurances from "+ employee.getFirstName()+" "+
+                        employee.getLastName()+" pay period?");
+                String yesNo = userInput.nextLine();
+                if (yesNo.equalsIgnoreCase("No")) {
+                    ((PayrollDeveloper)employee).setPayInsurance(false);
+                }
             }
         }
     }
 
-    public static void optionToTakeOutBonus(){}
+    public static void optionToTakeOutBonus() {
+    }
 
     public static void printDaMoney() {
         for (PayrollEmployee employee : listOfEmployees) {
